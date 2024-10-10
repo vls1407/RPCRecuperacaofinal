@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    public float turretRotationSpeed = 150;
-    public Transform turretParent;
     public TankMover tankMover;
-
+    public MiraTorreta miraTorreta;
+    public Torreta[] torretas;
 
     private void Awake()
     {
         if(tankMover == null)
-            tankMover = GetComponentInChildren<TankMover>();
+           tankMover = GetComponentInChildren<TankMover>();
+        if (miraTorreta == null)
+            miraTorreta = GetComponentInChildren<MiraTorreta>();
+        if (torretas == null || torretas.Length == 0)
+        {
+            torretas = GetComponentInChildren<Torreta[]>();
+        }
     }
 
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+       foreach (var torreta in torretas)
+       {
+            torreta.Shoot();  
+       }
     }
 
     public void HandleMoveBody(Vector2 movementVector)
@@ -27,13 +35,7 @@ public class TankController : MonoBehaviour
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        var turretDirection = (Vector3)pointerPosition - turretParent.position;
-
-        var desiredAngle = Mathf.Atan2(turretDirection.y, turretDirection.x) * Mathf.Rad2Deg;
-
-        var rotationStep = turretRotationSpeed * Time.deltaTime;
-
-        turretParent.rotation = Quaternion.RotateTowards(turretParent.rotation, Quaternion.Euler(0, 0, desiredAngle-90), rotationStep);
+        miraTorreta.Aim(pointerPosition);
     }
     
 }

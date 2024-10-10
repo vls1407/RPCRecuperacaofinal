@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiraTorreta : MonoBehaviour
 {
     public float turretRotationSpeed = 150;
+    
 
     public void Aim(Vector2 inputPointerPosition)
     {
