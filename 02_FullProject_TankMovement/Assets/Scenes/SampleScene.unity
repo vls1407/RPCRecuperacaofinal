@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5746443}
+  - component: {fileID: 5746444}
   m_Layer: 0
   m_Name: TankTurretParent
   m_TagString: Untagged
@@ -155,6 +156,19 @@ Transform:
   - {fileID: 1608041667}
   m_Father: {fileID: 2006124056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.97}
+--- !u!114 &5746444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8d50171c78a584ea561785f95279ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretRotationSpeed: 200
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12500,6 +12514,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   maxSpeed: 70
   rotationSpeed: 200
+  acceleration: 70
+  desaceleration: 50
+  currentSpeed: 0
+  currentForewardDirection: 1
 --- !u!1 &2006124055
 GameObject:
   m_ObjectHideFlags: 0
@@ -12610,9 +12628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8345610d78f69f743a6a4900575c8f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRotationSpeed: 150
-  turretParent: {fileID: 5746443}
   tankMover: {fileID: 0}
+  miraTorreta: {fileID: 0}
+  torretas: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

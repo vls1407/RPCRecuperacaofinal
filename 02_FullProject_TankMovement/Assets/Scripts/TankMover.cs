@@ -33,12 +33,20 @@ public class TankMover : MonoBehaviour
 
     private void CalculateSpeed(Vector2 movementVector)
     {
-        throw new NotImplementedException();
+        if (Mathf.Abs(movementVector.y) > 0)
+        {
+            currentSpeed += acceleration * Time.deltaTime;
+        }
+        else
+        {
+            currentSpeed -= desaceleration * Time.deltaTime;
+        }
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = (Vector2)transform.up * currentSpeed * Time.fixedDeltaTime;
+        rb.velocity = (Vector2)transform.up * currentSpeed * currentForewardDirection * Time.fixedDeltaTime;
         rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
     }
 }
