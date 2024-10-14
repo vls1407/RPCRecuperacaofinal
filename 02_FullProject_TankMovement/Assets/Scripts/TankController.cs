@@ -24,7 +24,8 @@ public class TankController : MonoBehaviour
     {
        foreach (var torreta in torretas)
        {
-            torreta.Shoot();  
+            torreta.Shoot();
+
        }
     }
 
