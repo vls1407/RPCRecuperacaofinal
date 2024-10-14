@@ -12,6 +12,17 @@ public class Bala : MonoBehaviour
     private float conquaredDistance = 0;
     private Rigidbody2D rb;
 
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Initialize()
+    {
+        startPosition = transform.position;
+        rb.velocity = transform.up * speed;    
+    }
     void Start()
     { 
     
@@ -20,7 +31,24 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        conquaredDistance = Vector2.Distance(transform.position, startPosition);
+        if (conquaredDistance >= maxDistance ) 
+        {
+            DisableObject();
+          
+        }
 
+    }
 
+    private void DisableObject()
+    {
+        rb.velocity = Vector2.zero;
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Colidiu" + collision.name);
+        DisableObject();
     }
 }

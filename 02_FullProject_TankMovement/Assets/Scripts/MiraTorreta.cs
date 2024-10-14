@@ -15,7 +15,7 @@ public class MiraTorreta : MonoBehaviour
 
         var rotationStep = turretRotationSpeed * Time.deltaTime;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, desiredAngle - 90), rotationStep);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, desiredAngle ), rotationStep);
     }
     void Start()
     {
