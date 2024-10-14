@@ -175,10 +175,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5525063779553301363, guid: 9d4b6089be91ae642bac6a52a3c51ccd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7564798385770807619, guid: 9d4b6089be91ae642bac6a52a3c51ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1579454424}
   m_SourcePrefab: {fileID: 100100000, guid: 9d4b6089be91ae642bac6a52a3c51ccd, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -5731,6 +5735,33 @@ Transform:
   - {fileID: 211342360990481363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1579454417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7564798385770807619, guid: 9d4b6089be91ae642bac6a52a3c51ccd, type: 3}
+  m_PrefabInstance: {fileID: 198295087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1579454424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579454417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9782974e98527458950fdf4f80a2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  projectilePrefab: {fileID: 2714937404149284855, guid: f53b0419f23f4da46bab85025992dd3e, type: 3}
+  firePoint: {fileID: 1630161006}
+  projectileSpeed: 20
+  OnMoveBody:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMoveTurret:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1618797620
 GameObject:
   m_ObjectHideFlags: 0
@@ -6087,6 +6118,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1630161006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2488323700433659292, guid: 9d4b6089be91ae642bac6a52a3c51ccd, type: 3}
+  m_PrefabInstance: {fileID: 198295087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1785163175
 GameObject:
   m_ObjectHideFlags: 0
