@@ -49,6 +49,13 @@ public class Bala : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Colidiu" + collision.name);
+
+        var dano = collision.GetComponent<Dano>();
+        if ( dano != null ) 
+        {
+            dano.Hit(damage);        
+        }
+
         DisableObject();
     }
 }
