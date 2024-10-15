@@ -19,7 +19,7 @@ public class DetecçãoInimigo : MonoBehaviour
 
     [field: SerializeField]
 
-    public bool TargetVisible { get; private set; }
+    public bool TargetVisible { get; set; }
 
     public Transform Target
     {
@@ -28,6 +28,7 @@ public class DetecçãoInimigo : MonoBehaviour
         {
             target = value;
             TargetVisible = false;
+            
         }
     }
 
@@ -41,6 +42,7 @@ public class DetecçãoInimigo : MonoBehaviour
     {
         if (Target != null)
             TargetVisible = CheckTargetVisible();
+       
     }
 
     private bool CheckTargetVisible()

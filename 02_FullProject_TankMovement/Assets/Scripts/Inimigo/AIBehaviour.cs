@@ -1,9 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-internal class AIBehaviour
+public abstract class AIBehaviour : MonoBehaviour
 {
-    internal void PerformAction(TankController tank, AIDetector detector)
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void PerformAction(TankController tank, AIDetector detector);
 }

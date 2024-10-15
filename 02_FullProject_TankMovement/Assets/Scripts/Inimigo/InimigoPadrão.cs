@@ -11,7 +11,8 @@ public class InimigoPadrão : MonoBehaviour
     [SerializeField]
     private TankController tank;
     [SerializeField]
-    AIDetector detector;
+    private AIDetector detector;
+
 
     private void Awake()
     {
